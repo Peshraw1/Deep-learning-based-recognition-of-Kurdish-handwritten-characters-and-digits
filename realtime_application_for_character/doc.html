@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KurdNet – Documentation</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Optional: reuse your main CSS if you want consistent colors -->
+    <link rel="stylesheet" type="text/css" href="style/digit.css">
+
+    <style>
+        /* Page-specific styling */
+        body {
+            background-color: #f7f9fb;
+        }
+        header.kurdnet-banner {
+            border-bottom: 3px solid #ffc107;
+            background: linear-gradient(90deg, #212529, #343a40);
+            padding: 20px 0;
+            color: white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+        header.kurdnet-banner h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        header.kurdnet-banner a.btn-outline-light {
+            border-width: 1px;
+            padding: 4px 12px;
+            font-size: 0.85rem;
+        }
+        main {
+            padding-top: 2rem;
+            padding-bottom: 3rem;
+        }
+        h3 {
+            margin-top: 1.8rem;
+        }
+        code {
+            background: #eef1f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .doc-section {
+            background: #ffffff;
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top banner -->
+<header class="kurdnet-banner">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+        <h2>KurdNet</h2>
+        <div class="text-center text-md-right">
+            <p class="mb-1">A Deep Learning-Based System for Recognition of Kurdish Handwritten Characters and Digits</p>
+            <small>Open-source • Research • Educational use</small>
+        </div>
+        <div class="mt-3 mt-md-0">
+            <a href="index.html" class="btn btn-outline-light btn-sm mx-1">Demo</a>
+            <a href="https://github.com/Peshraw1/Deep-learning-based-recognition-of-Kurdish-handwritten-characters-and-digits" class="btn btn-outline-light btn-sm mx-1">GitHub</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+
+        <!-- Overview -->
+        <section class="doc-section">
+            <h3>1. Overview</h3>
+            <p>
+                KurdNet is a web-based demo for real-time recognition of Kurdish handwritten
+                characters and digits. Users draw a single character or digit on the canvas, and a
+                convolutional neural network (CNN) predicts the most likely class. The system is intended
+                for academic, research, and educational use, especially in handwriting learning tools
+                and classroom environments.
+            </p>
+        </section>
+
+        <!-- How to use the demo -->
+        <section class="doc-section">
+            <h3>2. How to Use the Demo</h3>
+            <ol>
+                <li>Open the <strong>Demo</strong> page (index.html) in a modern web browser.</li>
+                <li>Use your mouse, trackpad, or touchscreen to draw a single Kurdish letter or digit inside the black canvas area.</li>
+                <li>If you make a mistake, click <strong>Clear</strong> to reset the canvas.</li>
+                <li>When you are satisfied with the drawing, click <strong>Predict</strong>.</li>
+                <li>The model output and confidence scores are displayed in the results panel next to the canvas.</li>
+            </ol>
+            <p>
+                The app is responsive and can be used on desktops, laptops, tablets, and phones.
+                For best handwriting quality, a touchscreen or pen-enabled device is recommended.
+            </p>
+        </section>
+
+        <!-- Supported symbols -->
+        <section class="doc-section">
+            <h3>3. Supported Characters and Digits</h3>
+            <p>
+                The current model is trained on:
+            </p>
+            <ul>
+                <li><strong>35 Sorani Kurdish letters</strong> written in the modified Arabic script.</li>
+                <li><strong>10 numerical digits</strong> (Eastern Arabic digits ۰–۹ or mapped equivalents).</li>
+            </ul>
+            <p>
+                Each input should contain <strong>one</strong> clearly written character or digit.
+                Multi-character words or connected text are not supported in this demo version.
+            </p>
+        </section>
+
+        <!-- How it works (short technical) -->
+        <section class="doc-section">
+            <h3>4. How KurdNet Works (Short Technical Description)</h3>
+            <p>
+                When the user clicks <strong>Predict</strong>, the drawing is captured from the HTML5
+                canvas and converted to a grayscale image. The image is resized and normalized to match
+                the input format of the trained CNN. The model, implemented with
+                <code>TensorFlow.js</code> in the browser or via a backend API (depending on configuration),
+                computes class probabilities for all characters and digits, and the top prediction is shown
+                to the user along with a confidence score or chart.
+            </p>
+        </section>
+
+        <!-- Educational / application scenarios -->
+        <section class="doc-section">
+            <h3>5. Example Use Cases</h3>
+            <ul>
+                <li><strong>Handwriting practice for children:</strong> integrate KurdNet into learning apps so students can practice letters and receive immediate automated feedback.</li>
+                <li><strong>Classroom demonstrations:</strong> teachers can show how machine learning recognizes handwritten Kurdish script in real time.</li>
+                <li><strong>Prototype data-entry tools:</strong> explore handwriting input instead of keyboards for simple forms or labels.</li>
+                <li><strong>Research experiments:</strong> use the demo to collect error cases or test new model variants.</li>
+            </ul>
+        </section>
+
+        <!-- Limitations -->
+        <section class="doc-section">
+            <h3>6. Current Limitations</h3>
+            <ul>
+                <li>Designed for <strong>single-symbol</strong> input (one letter or digit at a time).</li>
+                <li>Performance may decrease for very small, very large, or extremely stylized handwriting.</li>
+                <li>Background noise, poor contrast, or very fast strokes can affect recognition quality.</li>
+                <li>The system is a research/educational prototype and is <strong>not</strong> intended for security-critical or production-grade OCR tasks without further validation.</li>
+            </ul>
+        </section>
+
+        <!-- Privacy / data -->
+        <section class="doc-section">
+            <h3>7. Data and Privacy</h3>
+            <p>
+                The demo processes drawings in-memory for prediction. No personal data is requested, and
+                no user drawings are stored or logged by default. If data collection is enabled in a
+                research setup, users should be informed and local ethics or institutional guidelines must
+                be followed.
+            </p>
+        </section>
+
+        <!-- Getting started for developers -->
+        <section class="doc-section">
+            <h3>8. For Developers</h3>
+            <p>
+                The source code is available on GitHub and can be cloned and run locally. A typical setup includes:
+            </p>
+            <ol>
+                <li>Clone the repository from GitHub.</li>
+                <li>Serve the project with a simple HTTP server (e.g. <code>python -m http.server</code>).</li>
+                <li>Open <code>index.html</code> in a browser to access the demo.</li>
+                <li>Modify the JavaScript or model files to experiment with new architectures or datasets.</li>
+            </ol>
+            <p>
+                Detailed installation and development instructions are provided in the project README.
+            </p>
+        </section>
+
+  
+
+    </div>
+</main>
+
+<!-- Optional: Bootstrap JS (not strictly needed for static page) -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
