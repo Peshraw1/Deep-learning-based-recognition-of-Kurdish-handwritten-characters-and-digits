@@ -1,74 +1,83 @@
 📦 KurdNet – Kurdish Handwritten Character & Digit Recognition (Open-Source OCR)
 
-KurdNet is an open-source deep learning system designed to recognize Kurdish handwritten characters and digits.
-The model supports 35 Kurdish alphabet letters and 10 numerical digits (0–9) and is built using a custom Convolutional Neural Network (CNN) optimized for lightweight deployment.
+KurdNet is an open-source deep learning system designed to recognize handwritten Kurdish (Sorani) characters and digits.
+It supports 35 letters and 10 numerical digits (0–9) and is built using a custom modified AlexNet-style CNN optimized for lightweight deployment and browser-based inference.
 
-KurdNet provides a full OCR pipeline, including:
-
-🔍 Image preprocessing
-
-✂️ Segmentation
-
-🧠 CNN-based classification
-
-📤 Web and mobile integration
-
-📚 Dataset loading utilities
-
-This project aims to support Kurdish language technology, academic research, educational applications, and document digitization systems.
+KurdNet provides a complete OCR pipeline, including preprocessing, segmentation, model inference, and web-based interaction. The project aims to advance Kurdish language technology, support academic research, and enable educational and document-digitization applications.
 
 🚀 Features
 
-✔ Recognizes 35 Kurdish characters and 10 digits
-✔ Clean, modular Python/PyTorch code
-✔ Custom CNN with high accuracy
-✔ Benchmark models included: LeNet-5, AlexNet, ResNet-18
-✔ Supports web/mobile integration via lightweight API
-✔ Preprocessing and segmentation pipeline included
-✔ Fully open-source for research and development
-✔ Easy to train, test, and extend
+✔ Recognizes all 35 Kurdish Sorani characters and 10 digits
 
-📊 Model Performance (Benchmarked)
-Model	Accuracy
-KurdNet CNN (Ours)	98.9%
-ResNet-18	98.7%
-AlexNet	97.6%
-LeNet-5	94.8%
-📁 Repository Contents
+✔ Custom CNN architecture optimized for handwriting recognition
 
-models/ — CNN architectures
+✔ Full preprocessing pipeline: binarization, smoothing, segmentation
 
-data/ — Dataset loaders & preprocessing scripts
+✔ Real-time inference in the browser using TensorFlow.js
 
-training/ — Training and validation pipelines
+✔ Image upload + interactive canvas drawing interface
 
-api/ — REST API for prediction
+✔ Modular Python/PyTorch training code
 
-webapp/ — Optional web front-end
+✔ Optional web and mobile integration
 
-utils/ — Helper functions
+✔ Open-source and extendable
+
+🧠 Model Architecture
+
+KurdNet uses a modified AlexNet-style convolutional neural network, including:
+
+5 convolutional blocks
+
+Batch normalization for training stability
+
+Max-pooling layers for spatial reduction
+
+Fully connected layers (2048 → 2048 → 800 → 35)
+
+Dropout for regularization
+
+Softmax output for classification
+
+The architecture is tailored to the visual properties of Kurdish handwriting in Perso-Arabic script, including diacritics, dot variations, and writing-style diversity.
+
+🌐 Interactive Web Demo
+
+The repository includes a fully interactive web-based handwriting recognition tool:
+
+Draw Kurdish characters/digits directly on an HTML5 canvas
+
+Upload handwritten images for classification
+
+View the probability distribution of predicted classes
+
+All processing runs locally—no server required
+
+This makes KurdNet suitable for education, demonstrations, and lightweight deployment.
 
 🤝 Contributions
 
-Contributions, pull requests, and issue reports are welcome!
-You can contribute by:
+Contributions are welcome!
+You can help by:
 
-Adding new datasets
+Adding additional Kurdish handwriting datasets
 
-Improving model accuracy
+Improving model architecture or preprocessing
 
-Creating web/mobile UI
+Creating enhanced UI/UX for web or mobile apps
 
-Optimizing inference
+Optimizing runtime performance
 
 Translating documentation
 
+Pull requests and issues are encouraged.
+
 📜 License
 
-This project is released under an open-source license (MIT recommended).
-You may use, modify, and distribute it freely.
+This project is released under the MIT License, allowing free use, modification, and redistribution for research and development purposes.
 
 📬 Contact
 
-For research collaborations or inquiries:
+For collaborations or academic inquiries:
+
 📧 peshraw.abdalla@uoh.edu.iq
